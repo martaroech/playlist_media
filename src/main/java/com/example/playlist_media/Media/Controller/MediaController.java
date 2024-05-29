@@ -35,10 +35,22 @@ public class MediaController {
         return mediaService.getMediaById(id);
     }
 
-    // Post per creare un media
-    @PostMapping("/create")
-    public Media createMedia(@RequestBody Media media) {
-        return mediaService.createMedia(media);
+    // Post per creare una song
+    @PostMapping("/create/song")
+    public Song createSong(@RequestBody Song song) {
+        return mediaService.createSong(song);
+    }
+
+    // Post per creare un book
+    @PostMapping("/create/book")
+    public Book createBook(@RequestBody Book book) {
+        return mediaService.createBook(book);
+    }
+
+    // Post per creare un podcast
+    @PostMapping("/create/podcast")
+    public Podcast createPodcast(@RequestBody Podcast podcast) {
+        return mediaService.createPodcast(podcast);
     }
 
     // Put per modificare il nome di un media

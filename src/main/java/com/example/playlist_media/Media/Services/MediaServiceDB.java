@@ -27,8 +27,18 @@ public class MediaServiceDB implements MediaService {
     }
 
     @Transactional
-    public Media createMedia(Media media) {
-        return mediaRepositories.save(media);
+    public Song createSong(Song song) {
+        return mediaRepositories.save(song);
+    }
+
+    @Transactional
+    public Book createBook(Book book) {
+        return mediaRepositories.save(book);
+    }
+
+    @Transactional
+    public Podcast createPodcast(Podcast podcast) {
+        return mediaRepositories.save(podcast);
     }
 
     @Transactional
