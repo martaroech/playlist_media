@@ -23,23 +23,21 @@ USE `playlist`;
 CREATE TABLE IF NOT EXISTS `media` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `type` varchar(31) NOT NULL,
-  `title` varchar(255) DEFAULT NULL,
-  `author` varchar(255) DEFAULT NULL,
+  `title` varchar(255) NOT NULL,
+  `author` varchar(255) NOT NULL,
   `genre` varchar(255) DEFAULT NULL,
   `duration` double DEFAULT NULL,
-  `numPages` int(11) DEFAULT NULL,
-  `numEpisodes` int(11) DEFAULT NULL,
   `num_pages` int(11) DEFAULT NULL,
   `num_episodes` int(11) DEFAULT NULL,
-  `topic` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dump dei dati della tabella playlist.media: ~3 rows (circa)
-INSERT INTO `media` (`id`, `type`, `title`, `author`, `genre`, `duration`, `numPages`, `numEpisodes`, `num_pages`, `num_episodes`, `topic`) VALUES
-	(1, 'song', 'Margarita', 'Elodie', 'Pop', 2.57, NULL, NULL, NULL, NULL, NULL),
-	(2, 'book', 'Automatizzare le cose noiose con Python', 'Al Sweigart', 'Programmazione', NULL, 672, NULL, NULL, NULL, NULL),
-	(3, 'podcast', 'Focus Economia', 'Radio 24', 'Talk Show', NULL, NULL, 100, NULL, NULL, NULL);
+-- Dump dei dati della tabella playlist.media: ~4 rows (circa)
+INSERT INTO `media` (`id`, `type`, `title`, `author`, `genre`, `duration`, `num_pages`, `num_episodes`) VALUES
+	(1, 'song', 'Margarita', 'Elodie', 'Pop', 2.57, NULL, NULL),
+	(2, 'book', 'Automatizzare le cose noiose con Python', 'Al Sweigart', 'Programmazione', NULL, 672, NULL),
+	(3, 'podcast', 'Focus Economia', 'Radio 24', 'Talk Show', NULL, NULL, 25),
+	(4, 'song', 'Luce Nera', 'Bial Dope', 'Sad Rap', 2.51, NULL, NULL);
 
 -- Dump della struttura di tabella playlist.playlists
 CREATE TABLE IF NOT EXISTS `playlists` (
@@ -66,9 +64,10 @@ CREATE TABLE IF NOT EXISTS `playlists_media` (
   CONSTRAINT `id_playlist` FOREIGN KEY (`id_playlist`) REFERENCES `playlists` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dump dei dati della tabella playlist.playlists_media: ~3 rows (circa)
+-- Dump dei dati della tabella playlist.playlists_media: ~4 rows (circa)
 INSERT INTO `playlists_media` (`id_playlist`, `id_media`) VALUES
 	(1, 3),
+	(1, 4),
 	(2, 1),
 	(3, 2);
 
