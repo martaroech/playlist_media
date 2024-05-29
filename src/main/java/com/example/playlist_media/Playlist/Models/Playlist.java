@@ -2,8 +2,7 @@ package com.example.playlist_media.Playlist.Models;
 
 import com.example.playlist_media.Media.Models.*;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Set;
 
 import jakarta.persistence.Entity;
@@ -30,11 +29,9 @@ public class Playlist {
         joinColumns = @JoinColumn(name = "id_playlist"),
         inverseJoinColumns = @JoinColumn(name = "id_media")
     )
-    private Set<Media> media;
-
-    private List<Media> contents = new ArrayList<>();
+    private Set<Media> contents = new HashSet<>();
         
-    public Playlist (String name, List<Media> contents) {
+    public Playlist (String name, Set<Media> contents) {
         this.name = name;
         this.contents = contents;
     }
@@ -59,11 +56,11 @@ public class Playlist {
         this.name = name;
     }
 
-    public List<Media> getContents() {
+    public Set<Media> getContents() {
         return contents;
     }
 
-    public void setContents(List<Media> contents) {
+    public void setContents(Set<Media> contents) {
         this.contents = contents;
     }
 }
