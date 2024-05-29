@@ -55,13 +55,13 @@ public class PlaylistController {
 
     /* Azioni su media */
     // Post per aggiungere un media a una playlist
-    @PostMapping("/{playlistId}/addMedia/{mediaId}")
+    @PostMapping("/{playlist_id}/addMedia/{media_id}")
     public Playlist addMediaToPlaylist(@PathVariable Long playlist_id, @PathVariable Long media_id) {
         return playlistService.addMediaToPlaylist(playlist_id, media_id);
     }
 
     // Delete per rimuovere un media da una playlist
-    @DeleteMapping("/{playlistId}/removeMedia/{mediaId}")
+    @DeleteMapping("/{playlist_id}/removeMedia/{media_id}")
     public void removeMediaFromPlaylist(@PathVariable Long playlist_id, @PathVariable Long media_id) {
         playlistService.removeMediaFromPlaylist(playlist_id, media_id);
     }
