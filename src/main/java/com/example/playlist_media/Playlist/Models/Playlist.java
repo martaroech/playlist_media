@@ -25,7 +25,7 @@ public class Playlist {
     
     @ManyToMany
     @JoinTable(
-        name = "Playlist_Media",
+        name = "playlists_media",
         joinColumns = @JoinColumn(name = "id_playlist"),
         inverseJoinColumns = @JoinColumn(name = "id_media")
     )

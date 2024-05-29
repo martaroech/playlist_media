@@ -4,7 +4,7 @@ import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 
 @Entity
-@DiscriminatorValue("Song")
+@DiscriminatorValue("song")
 public class Song extends Media {
     private String genre;
     private double duration;

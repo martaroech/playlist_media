@@ -15,7 +15,7 @@ public interface MediaService {
 
     public void deleteMedia(Long id);
 
-    public Media addMediaToPlaylist(Long playlist_id, Long media_id);
+    // public Media addMediaToPlaylist(Long playlist_id, Long media_id);
 
-    public void removeMediaFromPlaylist(Long playlist_id, Long media_id);
+    // public void removeMediaFromPlaylist(Long playlist_id, Long media_id);
 }

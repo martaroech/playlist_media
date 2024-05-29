@@ -4,34 +4,34 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.DiscriminatorValue;
 
 @Entity
-@DiscriminatorValue("Podcast")
+@DiscriminatorValue("podcast")
 public class Podcast extends Media {
-    private String topic;
-    private int numEpisodes;
+    private String genre;
+    private int num_episodes;
 
-    public Podcast (String title, String author, String topic, int numEpisodes) {
+    public Podcast (String title, String author, String genre, int num_episodes) {
         super(title, author);
-        this.topic = topic;
-        this.numEpisodes = numEpisodes;
+        this.genre = genre;
+        this.num_episodes = num_episodes;
     }
 
     public Podcast () {
     }
 
     // Metodi getter e setter
-    public String getTopic() {
-        return topic;
+    public String getGenre() {
+        return genre;
     }
 
-    public void setTopic(String topic) {
-        this.topic = topic;
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 
-    public int getNumEpisodes() {
-        return numEpisodes;
+    public int getNum_episodes() {
+        return num_episodes;
     }
 
-    public void setNumEpisodes(int numEpisodes) {
-        this.numEpisodes = numEpisodes;
+    public void setNum_episodes(int num_episodes) {
+        this.num_episodes = num_episodes;
     }
 }

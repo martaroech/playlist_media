@@ -4,15 +4,15 @@ import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 
 @Entity
-@DiscriminatorValue("Book")
+@DiscriminatorValue("book")
 public class Book extends Media {
     private String genre;
-    private int numPages;
+    private int num_pages;
 
-    public Book (String title, String author, String genre, int numPages) {
+    public Book (String title, String author, String genre, int num_pages) {
         super(title, author);
         this.genre = genre;
-        this.numPages = numPages;
+        this.num_pages = num_pages;
     }
 
     public Book () {
@@ -27,11 +27,11 @@ public class Book extends Media {
         this.genre = genre;
     }
 
-    public int getNumPages() {
-        return numPages;
+    public int getNum_pages() {
+        return num_pages;
     }
 
-    public void setNumPages(int numPages) {
-        this.numPages = numPages;
+    public void setNum_pages(int num_pages) {
+        this.num_pages = num_pages;
     }
 }
