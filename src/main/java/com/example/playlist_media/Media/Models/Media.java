@@ -9,9 +9,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
@@ -23,13 +20,6 @@ public abstract class Media {
 
     @Column(name = "type", insertable = false, updatable = false)
     private String type;
-    
-    @ManyToMany
-    @JoinTable(
-    name = "playlists_media",
-    joinColumns = @JoinColumn(name = "media_id"),
-    inverseJoinColumns = @JoinColumn(name = "playlist_id")
-    )
 
     private String title;
     private String author;

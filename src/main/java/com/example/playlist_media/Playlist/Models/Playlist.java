@@ -4,6 +4,7 @@ import com.example.playlist_media.Media.Models.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -25,10 +26,11 @@ public class Playlist {
     
     @ManyToMany
     @JoinTable(
-    name = "playlists_media",
-    joinColumns = @JoinColumn(name = "playlist_id"),
-    inverseJoinColumns = @JoinColumn(name = "media_id")
+        name = "Playlist_Media",
+        joinColumns = @JoinColumn(name = "id_playlist"),
+        inverseJoinColumns = @JoinColumn(name = "id_media")
     )
+    private Set<Media> media;
 
     private List<Media> contents = new ArrayList<>();
         
